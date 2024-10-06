@@ -8,17 +8,18 @@ export class UsersController {
   constructor(private readonly usersService: UsersService) {}
   // controller la thang dieu huong, phan phoi cong viec 
   //service co kha nang ket noi voi database
-  
+
   @Post()
   create(
-    @Body("email") myEmail: string,
-    @Body("password") password: string,
-    @Body("name") name: string,
+    // @Body("email") myEmail: string,
+    // @Body("password") password: string,
+    // @Body("name") name: string,
+    @Body() createUserDto: CreateUserDto
   )
   {
     //const myEmail = req.body.email;
 
-    return this.usersService.create(myEmail,password,name);
+    return this.usersService.create(createUserDto);
   }
 
   @Get()
