@@ -28,8 +28,13 @@ export class UsersController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.usersService.findOne(+id);
+  findOne(
+    @Param('id') id: string
+  ) {
+    //const id: string = req.params.id;
+    // return id;
+    // return this.usersService.findOne(+id); // + có nghĩa là convert string sang number
+    return this.usersService.findOne(id);
   }
 
   @Patch(':id')
